@@ -9,6 +9,7 @@ export class PersonService {
   api_url: string = 'https://app-bk.herokuapp.com/person'
 
   constructor(private http: HttpClient) { }
+
   //Read All
   read (){
     return this.http.get(this.api_url)
