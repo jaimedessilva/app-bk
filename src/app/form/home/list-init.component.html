@@ -1,0 +1,33 @@
+<button class="btn btn-primary float-sm-right" [routerLink]="['/novo']">Novo Produto</button>
+<p></p>
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th>Phone</th>
+            <th>CPF</th>
+            <th>username</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of listPerson">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.telefone }}</td>
+            <td>{{ item.cpf }}</td>
+            <td>{{ item.user.username }}</td>
+            <td>
+            <button class="btn-success"><i class="fa fa-edit" ></i></button>
+                {{ ' ' + ' ' }}
+            <button class="btn-danger"><i class="fa fa-trash" ></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><p>1 - 19</p>
+

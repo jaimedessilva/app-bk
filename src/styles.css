@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css');
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+html {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    background-image: url('./assets/images/network-3472956_1920.jpg');
+    background-attachment: fixed;
+}
+body {
+    background-size: 100%;
+    background-color: transparent;
+}
+.container {
+    width: 80%;
+    margin-top: 35px;
+    padding: 10px;
+    min-height: 500px;
+    float: right;
+    background-color: rgb(255, 255, 255);
+}
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin-left: 0;
+    }
+}
