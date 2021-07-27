@@ -16,7 +16,7 @@ Frontend que consome uma api rest Java/Spring-Boot
 ## Tecnologias:
 
 <br/>
-
+<div>
 <img src="./src/assets/images/angular-icon-1.svg" width="30" />
 &nbsp;
 <img src="./src/assets/images/javascript.svg" width="30"/>
@@ -26,4 +26,4 @@ Frontend que consome uma api rest Java/Spring-Boot
 <img src="./src/assets/images/css3color.svg" width="30"/>
 &nbsp;
 <img src="./src/assets/images/netlify-icon.svg" width="30"/>
-<br>
+</div>
