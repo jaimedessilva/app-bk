@@ -1,4 +1,4 @@
-<button class="btn btn-primary float-sm-right" [routerLink]="['/novo']">Novo Produto</button>
+<button class="btn btn-primary float-sm-right" [routerLink]="['/novo']">Novo</button>
 <p></p>
 <table class="table table-hover">
 
@@ -7,24 +7,24 @@
             <th scope="col">#ID</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th>Phone</th>
-            <th>CPF</th>
-            <th>username</th>
+            <th scope="col">Phone</th>
+            <th scope="col">CPF</th>
+            <th scope="col">username</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of listPerson">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.telefone }}</td>
-            <td>{{ item.cpf }}</td>
-            <td>{{ item.user.username }}</td>
+        <tr *ngFor="let obj of listPerson">
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.email }}</td>
+            <td>{{ obj.telefone }}</td>
+            <td>{{ obj.cpf }}</td>
+            <td>{{ obj.user.username }}</td>
             <td>
-            <button class="btn-success"><i class="fa fa-edit" ></i></button>
+            <button class="btn-success" (click)="edit(obj)"><i class="fa fa-edit" ></i></button>
                 {{ ' ' + ' ' }}
-            <button class="btn-danger"><i class="fa fa-trash" ></i></button>
+            <button class="btn-danger" (click)="delete(obj.id)"><i class="fa fa-trash" ></i></button>
             </td>
         </tr>
     </tbody>

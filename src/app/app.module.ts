@@ -9,20 +9,25 @@ import { FormCreateComponent } from './form/form-create/form-create.component';
 import { HomeComponent } from './form/home/home.component';
 import { ListInitComponent } from './form/home/list-init.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+//import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    FormCreateComponent,
     HomeComponent,
-    ListInitComponent
+    ListInitComponent,
+    FormCreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   // FormGroup,
+    //FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

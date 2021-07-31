@@ -1,1 +1,41 @@
-<p>form-create works!</p>
+<h1>{{title}}</h1>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <!-- Person Name -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="name"
+      required="required" />
+  </div>
+  <!-- Person Email -->
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email"
+      formControlName="email" required="required" />
+  </div>
+  <!-- Person Phone -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="DDD + Phone" name="telefone" [(ngModel)]="telefone"
+      formControlName="telefone" />
+  </div>
+  <!-- Person CPF -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="CPF" name="cpf" formControlName="cpf" [(ngModel)]="cpf"
+      required="required" />
+  </div>
+  <!-- User Hidden-->
+  <div class="form-group" formGroupName="user">
+    <input type="hidden" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="name"
+      required="required" />
+  </div>
+  <!-- User Username-->
+  <div class="form-group" formGroupName="user">
+    <input type="text" class="form-control" placeholder="Username" [(ngModel)]="email" formControlName="username"
+      required="required" readonly />
+  </div>
+  <!-- User Password-->
+  <div class="form-group" formGroupName="user">
+    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="password"
+      formControlName="password" required="required" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
