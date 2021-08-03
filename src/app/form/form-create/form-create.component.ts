@@ -1,6 +1,8 @@
 import { PersonService } from './../../person.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Person } from 'src/app/model/person';
 
 
 @Component({
@@ -13,37 +15,41 @@ export class FormCreateComponent implements OnInit {
   title: string = 'Create Person';
 
   url: string = 'https://httpbin.org/post'
+
   formulario!: FormGroup;
 
-  person: any;
-  name: string = '';
-  email: string = '';
-  password!: string;
-  cpf: string = '000000000';
-  telefone: string = '99-90000-0000';
+  p: any = {
+   name: '',
+   email: '',
+   password: '',
+   cpf: '000000000',
+   telefone:'99-90000-0000'
+  }
 
   constructor(
              private builder: FormBuilder,
-             private service: PersonService) {
-             }
+             private service: PersonService,
+             private router: Router) {}
 
-  onLoad(): any { console.log('loading...')}
   ngOnInit(): void {
     this.formulario = this.builder.group({
-      name: [this.name],
-      email: [this.email],
-      telefone: [this.telefone],
-      cpf: [this.cpf],
+      name: [this.p.name],
+      email: [this.p.email],
+      telefone: [this.p.telefone],
+      cpf: [this.p.cpf],
       user: this.builder.group({
-        name: [this.name],
-        username: [this.email],
+        name: [this.p.name],
+        username: [this.p.email],
         password: [null]
       })
     })
   }
   onSubmit(){
-    this.person = this.formulario.value
-    this.service.create(this.person)
-
+    let person = this.formulario.value
+    this.save(person)
+    this.router.navigate(['/list'])
+  }
+  save (person: Person){
+    this.service.post_test(person)
   }
 }

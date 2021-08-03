@@ -1,9 +1,12 @@
-export interface Person {
+import { User } from './user';
+
+export class Person {
 
   id?: number;
-  name?: string;
-  email?: string;
+  name!: string;
+  email!: string;
   telefone?: string;
   cpf?: string;
-  user?: any
+  user: User = new User;
+
 }

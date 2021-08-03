@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+
+<form [hidden]="submitted" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <!-- Person Name -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nome" formControlName="name"
+    [(ngModel)]="obj.name"/>
+  </div>
+  <!-- Person Email -->
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="obj.email"
+      formControlName="email" />
+  </div>
+  <!-- Person Phone -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="DDD + Phone"
+      formControlName="telefone" />
+  </div>
+  <!-- Person CPF -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="CPF"
+    formControlName="cpf" />
+  </div>
+  <!-- User Hidden-->
+  <div class="form-group" formGroupName="user">
+    <input type="hidden" class="form-control" placeholder="Nome" formControlName="name"
+    [(ngModel)]="obj.name"/>
+  </div>
+  <!-- User Username-->
+  <div class="form-group" >
+    <input type="text" class="form-control" placeholder="Username"
+    [(ngModel)]="obj.email" formControlName="email"
+    readonly />
+  </div>
+  <!-- User Password-->
+  <div class="form-group" formGroupName="user">
+    <input type="password" class="form-control" placeholder="Password"
+    formControlName="password"/>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+  <br>
+  <pre>Form values: {{ formulario.value | json }}</pre>
+
+</form>

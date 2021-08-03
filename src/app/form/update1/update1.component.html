@@ -1,0 +1,52 @@
+<h1>Atualizar 1</h1>
+
+<form (ngSubmit)="onSubmit()">
+
+  <!-- Person Name -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nome"
+    [(ngModel)]="obj.name" name="name"/>
+  </div>
+
+  <!-- Person Email -->
+  <div class="form-group">
+    <input type="email" class="form-control" placeholder="Email"
+    [(ngModel)]="obj.email" name="email"/>
+  </div>
+
+   <!-- Person Phone -->
+   <div class="form-group">
+    <input type="text" class="form-control" placeholder="DDD + Phone"
+    [(ngModel)]="obj.telefone" name="telefone"/>
+  </div>
+
+  <!-- Person CPF -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="CPF"
+    [(ngModel)]="obj.cpf" name="cpf"/>
+  </div>
+  <!-- User Hidden-->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nome"
+    [(ngModel)]="obj.user.name" name="name" />
+  </div>
+
+  <!-- User Username-->
+  <div class="form-group" >
+    <input type="text" class="form-control" placeholder="Username"
+    [(ngModel)]="obj.user.username" name="username"
+    />
+  </div>
+
+  <!-- User Password-->
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password"
+    [ngModel]="obj.user.password" name="password"/>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+  <br>
+  <pre>Form values: {{ obj | json }}</pre>
+
+</form>
+

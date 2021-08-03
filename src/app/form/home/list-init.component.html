@@ -16,13 +16,14 @@
     <tbody>
         <tr *ngFor="let obj of listPerson">
             <td>{{ obj.id }}</td>
-            <td>{{ obj.name }}</td>
+            <td style="cursor: pointer"><a (click)="detail(obj.id)" >{{ obj.name }}</a></td>
             <td>{{ obj.email }}</td>
             <td>{{ obj.telefone }}</td>
             <td>{{ obj.cpf }}</td>
             <td>{{ obj.user.username }}</td>
             <td>
-            <button class="btn-success" (click)="edit(obj)"><i class="fa fa-edit" ></i></button>
+            <!-- routerLink="/edit/{{obj.id}}" -->
+            <button class="btn-success" (click)="edit(obj.id)" ><i class="fa fa-edit" ></i></button>
                 {{ ' ' + ' ' }}
             <button class="btn-danger" (click)="delete(obj.id)"><i class="fa fa-trash" ></i></button>
             </td>

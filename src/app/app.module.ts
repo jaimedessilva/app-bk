@@ -10,7 +10,11 @@ import { HomeComponent } from './form/home/home.component';
 import { ListInitComponent } from './form/home/list-init.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormUpdateComponent } from './form/form-update/form-update.component';
 //import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { Update1Component } from './form/update1/update1.component';
+//import { FormDebbugComponent } from './form/form-debbug/form-debbug.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     ListInitComponent,
-    FormCreateComponent
+    FormCreateComponent,
+    FormUpdateComponent,
+    Update1Component,
+    //FormDebbugComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
    // FormGroup,
-    //FormsModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],

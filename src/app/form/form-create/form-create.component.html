@@ -3,39 +3,42 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <!-- Person Name -->
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="name"
+    <input type="text" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="p.name"
       required="required" />
   </div>
   <!-- Person Email -->
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email"
+    <input type="email" class="form-control" placeholder="Email" [(ngModel)]="p.email" name="email"
       formControlName="email" required="required" />
   </div>
   <!-- Person Phone -->
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="DDD + Phone" name="telefone" [(ngModel)]="telefone"
+    <input type="text" class="form-control" placeholder="DDD + Phone" name="telefone" [(ngModel)]="p.telefone"
       formControlName="telefone" />
   </div>
   <!-- Person CPF -->
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="CPF" name="cpf" formControlName="cpf" [(ngModel)]="cpf"
+    <input type="text" class="form-control" placeholder="CPF" name="cpf" formControlName="cpf" [(ngModel)]="p.cpf"
       required="required" />
   </div>
   <!-- User Hidden-->
   <div class="form-group" formGroupName="user">
-    <input type="hidden" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="name"
+    <input type="hidden" class="form-control" placeholder="Nome" name="name" formControlName="name" [(ngModel)]="p.name"
       required="required" />
   </div>
   <!-- User Username-->
   <div class="form-group" formGroupName="user">
-    <input type="text" class="form-control" placeholder="Username" [(ngModel)]="email" formControlName="username"
+    <input type="text" class="form-control" placeholder="Username" [(ngModel)]="p.email" formControlName="username"
       required="required" readonly />
   </div>
   <!-- User Password-->
   <div class="form-group" formGroupName="user">
-    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="password"
+    <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="p.password"
       formControlName="password" required="required" />
   </div>
-
   <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+  <!--Form Debbbug-->
+  <pre>Form values: {{ formulario?.value | json }}</pre>
 </form>
+
